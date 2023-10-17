@@ -18,7 +18,7 @@ const Menu = () => {
       <h1 className={styles.title}>Editors Pick</h1>
       <MenuPosts withImage={true} />
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu
