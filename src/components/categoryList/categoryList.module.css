@@ -35,15 +35,27 @@
 }
 
 .category.travel {
-  background-color: #ff795736;
+  background-color: #fe9f3836;
 }
 
 .category.culture {
-  background-color: #ffb04f45;
+  background-color: #f8ef4945;
 }
 
-.category.coding {
+.category.dev {
   background-color: #5e4fff31;
+}
+
+.category.fitness {
+  background-color: #cb434331;
+}
+
+.category.music {
+  background-color: #4ff6ff31;
+}
+
+.category.reading {
+  background-color: #d0ff4f31;
 }
 
 .image {

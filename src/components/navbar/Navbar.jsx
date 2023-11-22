@@ -3,7 +3,7 @@ import styles from './navbar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import AuthLinks from '../authLinks/AuthLinks'
-import ThemeToggle from '../themeToggle/ThemeToggle'
+// import ThemeToggle from '../themeToggle/ThemeToggle'
 
 const Navbar = () => {
   return (
@@ -16,8 +16,9 @@ const Navbar = () => {
       </div>
       <div className={styles.logo}>blog</div>
       <div className={styles.links}>
-        <ThemeToggle />
-        <Link className={styles.link} href="">Homepage</Link>
+        {/* TODO: fix theme styling */}
+        {/* <ThemeToggle /> */}
+        <Link className={styles.link} href="/">Homepage</Link>
         <Link className={styles.link} href="">Contact</Link>
         <Link className={styles.link} href="">About</Link>
         <AuthLinks />

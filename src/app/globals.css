@@ -1,7 +1,7 @@
 :root {
-  --bg: white;
+  --bg: #F0DBA5;
   --textColor: black;
-  --softBg: #f0f0f0;
+  --softBg: #ebe0c6;
   --softTextColor: #626262;
 }
 
@@ -11,9 +11,54 @@
   box-sizing: border-box;
 }
 
+.dark {
+  --bg: #290f2a;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
+}
+
+.light {
+  --bg: #f0dba5;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
+}
+
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* gap: 3em; */
+  
+  background-color: var(--bg);
+  /* font-family: "Recoleta"; */
+  
+  /* margin: 0 10em; */
+}
+
+body::before,
+body::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  opacity: 40%;
+}
+
+body::before {
+  background: #8c8c8c;
+  /* filter: url("../../public/grain.svg"); */
+  filter: url(#noiseFilter);
+  position: fixed
+  /* z-index: 1; */
 }
 
 a {
@@ -21,24 +66,10 @@ a {
   text-decoration: none;
 }
 
-.dark {
-  --bg: #0f172a;
-  --textColor: #ddd;
-  --softBg: #1f273a;
-  --softTextColor: #a6a6a6;
-}
-
-.light {
-  --bg: white;
-  --textColor: black;
-  --softBg: #f0f0f0;
-  --softTextColor: #626262;
-}
-
 .container {
   min-height: 100vh;
-  background-color: var(--bg);
-  color: var(--textColor)
+  /* background-color: var(--bg); */
+  color: var(--textColor);
 }
 
 .wrapper {
@@ -85,6 +116,6 @@ a {
   font-size: 28px !important;
 }
 
-.quill>.ql-container>.ql-editor.ql-blank::before {
+.quill > .ql-container > .ql-editor.ql-blank::before {
   color: #b3b3b1;
 }
