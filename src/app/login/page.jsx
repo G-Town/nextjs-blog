@@ -7,8 +7,6 @@ import { useEffect } from 'react'
 
 const LoginPage = () => {
   const { status } = useSession()
-  console.log("🚀 ~ file: page.jsx:9 ~ LoginPage ~ status:", status)
-
   const router = useRouter()
 
   useEffect(() => {
