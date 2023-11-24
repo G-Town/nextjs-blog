@@ -9,7 +9,8 @@ export const GET = async (req, { params }) => {
   try {
     const post = await prisma.post.findUnique({
       where: { slug },
-      data: { views: { increment: 1 } },
+      // TODO: add view count to posts
+      // data: { views: { increment: 1 } },
       include: { user: true }
     })
 

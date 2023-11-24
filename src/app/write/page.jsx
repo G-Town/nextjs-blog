@@ -9,6 +9,8 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/
 import { app } from '@/utils/firebase'
 
 // TODO: find way or React Quill to be compatible or replace
+// or import dynamically
+
 // import ReactQuill from 'react-quill'
 // import 'react-quill/dist/quill.bubble.css'
 

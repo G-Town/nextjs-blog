@@ -4,6 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const getData = async () => {
+
+  const url = process.env.VERCEL_URL
+  console.log("🚀 ~ file: CategoryList.jsx:9 ~ getData ~ url:", url)
+
   const res = await fetch("http://localhost:3000/api/categories", {
     cache: "no-store",
   })

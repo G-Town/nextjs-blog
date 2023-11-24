@@ -19,7 +19,7 @@ const SinglePage = async ({ params }) => {
   const { slug } = params;
 
   const data = await getData(slug);
-  // console.log("🚀 ~ file: page.jsx:22 ~ SinglePage ~ data:", data)
+  console.log("🚀 ~ file: page.jsx:22 ~ SinglePage ~ data:", data)
 
   return (
     <div className={styles.container}>
