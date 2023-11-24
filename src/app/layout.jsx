@@ -13,6 +13,9 @@ export const metadata = {
   description: 'The best blog app!',
 }
 
+const url = process.env.VERCEL_URL
+console.log("🚀 ~ file: layout.jsx:17 ~ url:", url)
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
