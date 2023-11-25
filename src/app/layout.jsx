@@ -8,6 +8,14 @@ import AuthProvider from '@/providers/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
+let url
+  if (process.env.VERCEL_URL !== undefined) {
+    url = `https://${process.env.VERCEL_URL}`
+  } else {
+    url = 'http://localhost:3000'
+  }
+  console.log("🚀 ~ file: page.jsx:12 ~ getData ~ url:", url)
+
 export const metadata = {
   title: 'Blog App',
   description: 'The best blog app!',
