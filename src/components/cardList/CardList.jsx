@@ -4,8 +4,17 @@ import Pagination from '../pagination/Pagination'
 // import Image from 'next/image'
 import Card from '../card/Card'
 
+// const url = `https://${process.env.VERCEL_URL || 'localhost:3000'}`
+// console.log("🚀 ~ file: CardList.jsx:8 ~ url:", url)
+
 const getData = async (page, cat) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat||""}`,
+  let url
+  if (process.env.VERCEL_URL !== undefined) {
+    url = `https://${process.env.VERCEL_URL}`
+  } else {
+    url = 'http://localhost:3000'
+  }
+  const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat||""}`,
     {
       cache: "no-store",
     }

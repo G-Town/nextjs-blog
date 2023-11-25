@@ -23,8 +23,15 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug }) => {
   const { status } = useSession()
 
+  let url
+  if (process.env.VERCEL_URL !== undefined) {
+    url = `https://${process.env.VERCEL_URL}`
+  } else {
+    url = 'http://localhost:3000'
+  }
+
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `${url}/api/comments?postSlug=${postSlug}`,
     fetcher
   )
 
