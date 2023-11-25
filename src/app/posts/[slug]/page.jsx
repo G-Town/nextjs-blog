@@ -10,6 +10,7 @@ const getData = async (slug) => {
   } else {
     url = 'http://localhost:3000'
   }
+  console.log("🚀 ~ file: page.jsx:12 ~ getData ~ url:", url)
   const res = await fetch(`${url}/api/posts/${slug}`, {
     cache: "no-store",
   });

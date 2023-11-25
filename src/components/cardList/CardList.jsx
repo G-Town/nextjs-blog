@@ -4,9 +4,6 @@ import Pagination from '../pagination/Pagination'
 // import Image from 'next/image'
 import Card from '../card/Card'
 
-// const url = `https://${process.env.VERCEL_URL || 'localhost:3000'}`
-// console.log("🚀 ~ file: CardList.jsx:8 ~ url:", url)
-
 const getData = async (page, cat) => {
   let url
   if (process.env.VERCEL_URL !== undefined) {
