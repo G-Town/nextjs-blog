@@ -21,7 +21,8 @@ const fetcher = async (url) => {
 }
 
 const Comments = ({ postSlug }) => {
-  const { status } = useSession()
+  // const { status } = useSession()
+  const status = "unauthenticated"
 
   let url
   if (process.env.VERCEL_URL !== undefined) {
