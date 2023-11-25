@@ -9,12 +9,15 @@ import AuthProvider from '@/providers/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 let url
-  if (process.env.VERCEL_URL !== undefined) {
-    url = `https://${process.env.VERCEL_URL}`
-  } else {
-    url = 'http://localhost:3000'
-  }
-  console.log("🚀 ~ file: page.jsx:12 ~ getData ~ url:", url)
+if (process.env.VERCEL_URL !== undefined) {
+  url = `https://${process.env.VERCEL_URL}`
+} else {
+  url = 'http://localhost:3000'
+}
+
+console.log("🚀 ~ file: layout.jsx:16 ~ url:", url)
+console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
+
 
 export const metadata = {
   title: 'Blog App',
