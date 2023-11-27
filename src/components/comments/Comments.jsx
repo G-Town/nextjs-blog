@@ -26,7 +26,7 @@ const Comments = ({ postSlug }) => {
 
   let url
   if (process.env.VERCEL_URL !== undefined) {
-    url = `https://${process.env.VERCEL_URL}`
+    url = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   } else {
     url = 'http://localhost:3000'
   }
