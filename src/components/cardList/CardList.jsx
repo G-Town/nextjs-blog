@@ -6,7 +6,7 @@ import Card from '../card/Card'
 const getData = async (page, cat) => {
   let url
   if (process.env.VERCEL_URL !== undefined) {
-    url = `https://${process.env.VERCEL_URL}`
+    url = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   } else {
     url = 'http://localhost:3000'
   }
