@@ -2,9 +2,9 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-// import { ThemeContextProvider } from '@/context/ThemeContext'
-// import ThemeProvider from '@/providers/ThemeProvider'
-// import AuthProvider from '@/providers/AuthProvider'
+import { ThemeContextProvider } from '@/context/ThemeContext'
+import ThemeProvider from '@/providers/ThemeProvider'
+import AuthProvider from '@/providers/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +16,7 @@ if (process.env.VERCEL_URL !== undefined) {
 }
 
 console.log("🚀 ~ file: layout.jsx:16 ~ url:", url)
-console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
+// console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
 
 
 export const metadata = {
@@ -43,19 +43,19 @@ export default function RootLayout({ children }) {
         {/* <div className="main">
           <div></div>
         </div> */}
-        {/* <AuthProvider> */}
-        {/* <ThemeContextProvider> */}
-        {/* <ThemeProvider> */}
-        <div className='container'>
-          <div className='wrapper'>
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
-        </div>
-        {/* </ThemeProvider> */}
-        {/* </ThemeContextProvider> */}
-        {/* </AuthProvider> */}
+        <AuthProvider>
+          <ThemeContextProvider>
+            <ThemeProvider>
+              <div className='container'>
+                <div className='wrapper'>
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </div>
+              </div>
+            </ThemeProvider>
+          </ThemeContextProvider>
+        </AuthProvider>
       </body>
     </html>
   )
