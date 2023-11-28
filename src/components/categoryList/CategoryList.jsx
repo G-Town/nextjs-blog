@@ -14,11 +14,9 @@ const getData = async () => {
     cache: "no-store",
   })
 
-  const data = await res.json()
-
   if (!res.ok) {
     console.log("🚀 ~ file: CategoryList.jsx:18 ~ getData ~ res:", res)
-    throw new Error(data.message)
+    throw new Error(res.json())
   }
 
   return res.json()
