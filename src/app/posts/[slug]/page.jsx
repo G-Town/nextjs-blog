@@ -17,7 +17,7 @@ const getData = async (slug) => {
 
   if (!res.ok) {
     console.log("🚀 ~ file: page.jsx:19 ~ getData ~ res:", res)
-    throw new Error("Failed");
+    throw new Error("page getData failed")
   }
 
   return res.json();
