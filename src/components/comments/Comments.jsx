@@ -13,6 +13,7 @@ const fetcher = async (url) => {
   const data = await res.json()
 
   if (!res.ok) {
+    console.log("🚀 ~ file: Comments.jsx:16 ~ fetcher ~ res:", res)
     const error = new Error(data.message)
     throw error
   }

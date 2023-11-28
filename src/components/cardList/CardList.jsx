@@ -17,6 +17,7 @@ const getData = async (page, cat) => {
   )
 
   if (!res.ok) {
+    console.log("🚀 ~ file: CardList.jsx:20 ~ getData ~ res:", res)
     throw new Error("Failed")
   }
 

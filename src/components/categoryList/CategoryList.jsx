@@ -15,6 +15,7 @@ const getData = async () => {
   })
 
   if (!res.ok) {
+    console.log("🚀 ~ file: CategoryList.jsx:18 ~ getData ~ res:", res)
     throw new Error("Failed")
   }
 
