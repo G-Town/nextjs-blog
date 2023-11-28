@@ -16,9 +16,11 @@ const getData = async (page, cat) => {
     }
   )
 
+  const data = await res.json()
+
   if (!res.ok) {
     console.log("🚀 ~ file: CardList.jsx:20 ~ getData ~ res:", res)
-    throw new Error("Failed")
+    throw new Error(data.message)
   }
 
   return res.json()
