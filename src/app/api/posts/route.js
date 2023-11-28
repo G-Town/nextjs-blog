@@ -18,6 +18,7 @@ import { getAuthSession } from '@/utils/auth'
 import prisma from '@/utils/connect'
 import { NextResponse } from 'next/server'
 
+// GET ALL POSTS
 export const GET = async (req) => {
   const { searchParams } = new URL(req.url)
 
@@ -47,7 +48,7 @@ export const GET = async (req) => {
     //   skip: POST_PER_PAGE * (page - 1),
     // })
 
-    return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }))
+    return new NextResponse(JSON.stringify({ posts, count }, { status: 200 })).cookies.set({ httpOnly: false})
   } catch (err) {
     console.log(err)
     return new NextResponse(
