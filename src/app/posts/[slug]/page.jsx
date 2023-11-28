@@ -25,6 +25,7 @@ const getData = async (slug) => {
 
 const SinglePage = async ({ params }) => {
   const { slug } = params;
+  console.log("🚀 ~ file: page.jsx:28 ~ SinglePage ~ params:", params)
 
   const data = await getData(slug);
   console.log("🚀 ~ file: page.jsx:22 ~ SinglePage ~ data:", data)
