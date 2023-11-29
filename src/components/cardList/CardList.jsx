@@ -14,7 +14,7 @@ const getData = async (page, cat) => {
     console.log("🚀 ~ file: CardList.jsx:14 ~ getData ~ url:", url)
     url = 'http://localhost:3000'
   }
-  const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat||""}`,
+  const res = await fetch(`${url}/api/posts?page=${page}&cat=${""}`,
     {
       cache: "no-store",
     }
