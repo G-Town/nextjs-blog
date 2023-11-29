@@ -1,19 +1,3 @@
-// import prisma from '@/utils/connect'
-// import { NextResponse } from 'next/server'
-
-// export const GET = async () => {
-//   try {
-//     const posts = await prisma.post.findMany()
-
-//     return new NextResponse(JSON.stringify(posts, { status: 200 }))
-//   } catch (err) {
-//     console.log(err)
-//     return new NextResponse(
-//       JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
-//     )
-//   }
-// }
-
 import { getAuthSession } from '@/utils/auth'
 import prisma from '@/utils/connect'
 import { NextResponse } from 'next/server'
@@ -22,6 +6,7 @@ import { NextResponse } from 'next/server'
 export const GET = async (req) => {
   console.log("🚀 ~ file: route.js:23 ~ GET ~ req:", req)
   const { searchParams } = new URL(req.url)
+  console.log("🚀 ~ file: route.js:9 ~ GET ~ req.url:", req.url)
   console.log("🚀 ~ file: route.js:24 ~ GET ~ searchParams:", searchParams)
 
   const page = searchParams.get("page")
