@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 
 // GET ALL POSTS
 export const GET = async (req) => {
-  // console.log("🚀 ~ file: route.js:23 ~ GET ~ req:", req)
+  console.log("🚀 ~ file: route.js:23 ~ GET ~ req:", req)
   const { searchParams } = new URL(req.url)
   console.log("🚀 ~ file: route.js:9 ~ GET ~ req.url:", req.url)
   console.log("🚀 ~ file: route.js:24 ~ GET ~ searchParams:", searchParams)

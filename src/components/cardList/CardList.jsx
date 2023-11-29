@@ -13,7 +13,7 @@ const getData = async (page, cat) => {
   } else {
     url = 'http://localhost:3000'
   }
-  console.log("🚀 ~ file: CardList.jsx:13 ~ getData ~ url:", `${url}/api/posts?page=${page}&cat=${cat || ""}`)
+  console.log("🚀 ~ file: CardList.jsx:16 ~ getData ~ url:", `${url}/api/posts?page=${page}&cat=${cat || ""}`)
   const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
@@ -32,6 +32,7 @@ const getData = async (page, cat) => {
 
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat)
+  // console.log("🚀 ~ file: CardList.jsx:35 ~ CardList ~ posts:", posts)
 
   const POST_PER_PAGE = 2
 
