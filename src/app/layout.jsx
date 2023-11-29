@@ -15,7 +15,7 @@ if (process.env.VERCEL_URL !== undefined) {
 } else {
   url = 'http://localhost:3000'
 }
-
+console.log("layout test")
 console.log("🚀 ~ file: layout.jsx:16 ~ url:", url)
 // console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
 
