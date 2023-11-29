@@ -16,6 +16,7 @@ if (process.env.VERCEL_URL !== undefined) {
   url = 'http://localhost:3000'
 }
 console.log("🚀 ~ file: layout.jsx:16 ~ url:", url)
+console.log("🚀 ~ file: layout.jsx:16 ~ mongo:", process.env.MONGO_URI)
 // console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
 
 

@@ -15,11 +15,11 @@ const getData = async () => {
   })
 
   if (!res.ok) {
-    console.log("🚀 ~ file: CategoryList.jsx:18 ~ getData ~ res:", res)
+    // console.log("🚀 ~ file: CategoryList.jsx:18 ~ getData ~ res:", res)
     throw new Error("CategoryList getData failed")
   }
 
-  console.log("🚀 ~ file: CategoryList.jsx:22 ~ getData ~ res:", res)
+  // console.log("🚀 ~ file: CategoryList.jsx:22 ~ getData ~ res:", res)
 
   return res.json()
 }
