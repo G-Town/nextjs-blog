@@ -21,6 +21,7 @@ import { NextResponse } from 'next/server'
 // GET ALL POSTS
 export const GET = async (req) => {
   const { searchParams } = new URL(req.url)
+  console.log("🚀 ~ file: route.js:24 ~ GET ~ searchParams:", searchParams)
 
   const page = searchParams.get("page")
   // console.log("🚀 ~ file: route.js:9 ~ GET ~ page:", page)
@@ -42,13 +43,14 @@ export const GET = async (req) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where })
     ])
+    console.log("🚀 ~ file: route.js:46 ~ GET ~ posts:", posts)
 
     // const posts = await prisma.post.findMany({
     //   take: POST_PER_PAGE,
     //   skip: POST_PER_PAGE * (page - 1),
     // })
 
-    return new NextResponse(JSON.stringify({ posts, count }, { status: 200 })).cookies.set({ httpOnly: false})
+    return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }))
   } catch (err) {
     console.log(err)
     return new NextResponse(
