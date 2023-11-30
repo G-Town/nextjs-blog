@@ -9,7 +9,8 @@ const getData = async (page, cat) => {
   let url
   if (process.env.VERCEL_URL !== undefined) {
     // url = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    url = `https://${process.env.VERCEL_URL}`
+    // url = `https://${process.env.VERCEL_URL}`
+    url = process.env.NEXT_PUBLIC_VERCEL_URL
   } else {
     url = 'http://localhost:3000'
   }
@@ -19,8 +20,8 @@ const getData = async (page, cat) => {
   console.log("🚀 ~ file: CardList.jsx:16 ~ getData ~ url:", `${url}/api/posts?page=${page}&cat=${cat || ""}`)
   const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
     {
-      // cache: "no-store",
-      next: { revalidate: 10 }
+      cache: "no-store",
+      // next: { revalidate: 10 }
     }
   )
 
