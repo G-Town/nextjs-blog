@@ -48,8 +48,8 @@ export const GET = async (req) => {
 
 // CREATE A POST
 export const POST = async (req) => {
-  // const session = await getAuthSession()
-  const session = "unauthenticated"
+  const session = await getAuthSession()
+  // const session = "unauthenticated"
 
   if (!session) {
     return new NextResponse(

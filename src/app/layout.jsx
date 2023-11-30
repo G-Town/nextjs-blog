@@ -19,6 +19,31 @@ if (process.env.VERCEL_URL !== undefined) {
 // console.log("🚀 ~ file: layout.jsx:16 ~ mongo:", process.env.MONGO_URI)
 // console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
 
+const getData = async (page, cat) => {
+  let url
+  if (process.env.VERCEL_URL !== undefined) {
+    // url = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    url = `https://${process.env.VERCEL_URL}`
+  } else {
+    url = 'http://localhost:3000'
+  }
+
+  
+
+  const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
+    {
+      cache: "no-store",
+    }
+  )
+
+  if (!res.ok) {
+    throw new Error("CardList getData failed")
+  }
+
+
+  return res.json()
+}
+
 
 export const metadata = {
   title: 'Blog App',

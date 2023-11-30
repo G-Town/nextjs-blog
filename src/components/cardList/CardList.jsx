@@ -13,10 +13,14 @@ const getData = async (page, cat) => {
   } else {
     url = 'http://localhost:3000'
   }
+
+
+
   console.log("🚀 ~ file: CardList.jsx:16 ~ getData ~ url:", `${url}/api/posts?page=${page}&cat=${cat || ""}`)
   const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
+      next: { revalidate: 10 }
     }
   )
 
