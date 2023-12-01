@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link className={styles.link} href="/">Homepage</Link>
         <Link className={styles.link} href="">Contact</Link>
         <Link className={styles.link} href="">About</Link>
-        {/* <AuthLinks /> */}
+        <AuthLinks />
       </div>
 
     </div>

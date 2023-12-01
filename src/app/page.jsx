@@ -7,7 +7,7 @@ import Menu from '@/components/menu/Menu'
 
 export default function Home({ searchParams }) {
   const page = parseInt(searchParams.page) || 1
-  console.log("🚀 ~ file: page.jsx:10 ~ Home ~ page:", page)
+  // console.log("🚀 ~ file: page.jsx:10 ~ Home ~ page:", page)
   return (
     <div className={styles.container}>
       <Featured />

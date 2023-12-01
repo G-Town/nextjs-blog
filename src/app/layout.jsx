@@ -2,8 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-import { ThemeContextProvider } from '@/context/ThemeContext'
-import ThemeProvider from '@/providers/ThemeProvider'
+// import { ThemeContextProvider } from '@/context/ThemeContext'
+// import ThemeProvider from '@/providers/ThemeProvider'
 import AuthProvider from '@/providers/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,32 +18,6 @@ if (process.env.VERCEL_URL !== undefined) {
 // console.log("🚀 ~ file: layout.jsx:16 ~ url:", url)
 // console.log("🚀 ~ file: layout.jsx:16 ~ mongo:", process.env.MONGO_URI)
 // console.log("🚀 ~ file: layout.jsx:16 ~ auth url:", process.env.NEXTAUTH_URL)
-
-const getData = async (page, cat) => {
-  let url
-  if (process.env.VERCEL_URL !== undefined) {
-    // url = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    url = `https://${process.env.VERCEL_URL}`
-  } else {
-    url = 'http://localhost:3000'
-  }
-
-  
-
-  const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
-    }
-  )
-
-  if (!res.ok) {
-    throw new Error("CardList getData failed")
-  }
-
-
-  return res.json()
-}
-
 
 export const metadata = {
   title: 'Blog App',
@@ -64,23 +38,19 @@ export default function RootLayout({ children }) {
             <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
             <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
           </filter>
-
         </svg>
-        {/* <div className="main">
-          <div></div>
-        </div> */}
         <AuthProvider>
-          <ThemeContextProvider>
-            <ThemeProvider>
-              <div className='container'>
-                <div className='wrapper'>
-                  <Navbar />
-                  {children}
-                  <Footer />
-                </div>
-              </div>
-            </ThemeProvider>
-          </ThemeContextProvider>
+          {/* <ThemeContextProvider> */}
+          {/* <ThemeProvider> */}
+          <div className='container'>
+            <div className='wrapper'>
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </div>
+          {/* </ThemeProvider> */}
+          {/* </ThemeContextProvider> */}
         </AuthProvider>
       </body>
     </html>

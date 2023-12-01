@@ -14,32 +14,23 @@ const getData = async (page, cat) => {
     url = 'http://localhost:3000'
   }
 
-
-
   console.log("🚀 ~ file: CardList.jsx:16 ~ getData ~ url:", `${url}/api/posts?page=${page}&cat=${cat || ""}`)
   const res = await fetch(`${url}/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
-      // next: { revalidate: 10 }
-    }
+    { cache: "no-store" }
   )
 
   if (!res.ok) {
     console.log("🚀 ~ file: CardList.jsx:20 ~ getData ~ res:", res)
     throw new Error("CardList getData failed")
   }
-
-  console.log("🚀 ~ file: CardList.jsx:24 ~ getData ~ res:", res)
-
+  // console.log("🚀 ~ file: CardList.jsx:24 ~ getData ~ res:", res)
   return res.json()
 }
 
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat)
   // console.log("🚀 ~ file: CardList.jsx:35 ~ CardList ~ posts:", posts)
-
   const POST_PER_PAGE = 2
-
   const hasPrev = POST_PER_PAGE * (page - 1) > 0
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count
 
@@ -55,6 +46,5 @@ const CardList = async ({ page, cat }) => {
     </div>
   )
 }
-
 
 export default CardList

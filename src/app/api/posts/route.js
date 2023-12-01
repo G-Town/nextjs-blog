@@ -6,8 +6,8 @@ import { NextResponse } from 'next/server'
 export const GET = async (req) => {
   console.log("🚀 ~ file: route.js:23 ~ GET ~ req:", req)
   const { searchParams } = new URL(req.url)
-  console.log("🚀 ~ file: route.js:9 ~ GET ~ req.url:", req.url)
-  console.log("🚀 ~ file: route.js:24 ~ GET ~ searchParams:", searchParams)
+  // console.log("🚀 ~ file: route.js:9 ~ GET ~ req.url:", req.url)
+  // console.log("🚀 ~ file: route.js:24 ~ GET ~ searchParams:", searchParams)
 
   const page = searchParams.get("page")
   // console.log("🚀 ~ file: route.js:9 ~ GET ~ page:", page)
